@@ -31,4 +31,4 @@ you will see the response as an array of objects
 
 To run the scheduler go to src folder , Now run node scheduler.js , Generally the data in the website changes every midnight 
 so the scheduler starts executing at 00:00 everyday to check the data you can go to db folder after exection completion.
-But i set the scheduler to start immediately and then continue running every 5 minutes
+But i set the scheduler to start immediately and then continue running every 5 minutes. You can check the data stored in src/db folder
