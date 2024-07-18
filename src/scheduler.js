@@ -22,11 +22,17 @@ const scrapeCurrencies = async () => {
 };
 
 
-const job = schedule.scheduleJob('*/10 * * * *',()=>{
+scrapeCurrencies().then(() => {
+  console.log('Initial scraping task completed.');
+  const job = schedule.scheduleJob('*/5 * * * *', () => {
     console.log('Starting scheduled scraping task...');
     scrapeCurrencies();
-})
-console.log('Cron job scheduled to run every 10min.');
+  });
+
+  console.log('node-schedular job scheduled to run every 5 minutes.');
+}).catch(error => {
+  console.error('Error during the initial scraping task:', error);
+});
 
 
 

@@ -8,10 +8,10 @@ git clone https://github.com/DINESH-NOOKADA/VanceAssignment.git
 Now go to VanceAssignment folder and run " npm install "
 after run " node index.js "
 You must see a message :
-Server running at http://localhost:3000
+Server running at http://localhost:6010
 
 Now to test the api provided go to 
-http://localhost:3000/api-docs/ in the browser
+http://localhost:6010/api-docs/ in the browser
 
 Wait for sometime after executing the route
 if you see an message like 
@@ -27,5 +27,8 @@ Table cleared.
 Data inserted into the table.
 scraping done
 "
+you will see the response as an array of objects 
 
-you will see the response 
+To run the scheduler go to src folder , Now run node scheduler.js , Generally the data in the website changes every midnight 
+so the scheduler starts executing at 00:00 everyday to check the data you can go to db folder after exection completion.
+But i set the scheduler to start immediately and then continue running every 5 minutes
