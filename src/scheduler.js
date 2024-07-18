@@ -26,7 +26,7 @@ const job = schedule.scheduleJob('*/10 * * * *',()=>{
     console.log('Starting scheduled scraping task...');
     scrapeCurrencies();
 })
-console.log('Cron job scheduled to run every 3min.');
+console.log('Cron job scheduled to run every 10min.');
 
 
 

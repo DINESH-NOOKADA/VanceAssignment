@@ -4,7 +4,7 @@ const { scrapeData } = require('../scrape.js');
 const { getAllData } = require('../db/db2.js');
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
-
+const BASE_URL = process.env.BASE_URL
 /**
  * @swagger
  * /api/forex-data:
@@ -69,7 +69,7 @@ router.post('/api/forex-data', async (req, res) => {
     const dbPath = path.join(__dirname, `../db/dataFolder/postData.db`);
     const tableName = 'postData'
     try {
-      console.log('scraping started');
+      console.log(`scraping started`);
       await scrapeData(from, to, period,dbPath,tableName);
       console.log("scraping done");
       const db = new sqlite3.Database(dbPath);

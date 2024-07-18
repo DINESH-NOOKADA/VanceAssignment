@@ -1,11 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const forexDataRoutes = require('./src/routes/forexData');
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const dotenv = require('dotenv');
 dotenv.config();
-
+const forexDataRoutes = require('./src/routes/forexData');
 const app = express();
 const port = process.env.PORT || 6010;
 
@@ -22,7 +21,7 @@ const options = {
     },
     servers:[
       {
-        url:'http://localhost:3000/',
+        url:`http://localhost:${port}/`,
       }
     ],
   },
