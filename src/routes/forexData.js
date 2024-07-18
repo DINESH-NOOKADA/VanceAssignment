@@ -66,7 +66,7 @@ const BASE_URL = process.env.BASE_URL
 
 router.post('/api/forex-data', async (req, res) => {
     const { from, to, period } = req.query;
-    const dbPath = path.join(__dirname, `../db/dataFolder/postData.db`);
+    const dbPath = path.join(__dirname, `../db/postData.db`);
     const tableName = 'postData'
     try {
       console.log(`scraping started`);

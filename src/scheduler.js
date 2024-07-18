@@ -10,7 +10,7 @@ const scrapeCurrencies = async () => {
   for (const pair of currencyPairs) {
     for (const period of pair.periods) {
       try {
-        let dbPath = path.join(__dirname, `./db/dataFolder/${pair.from}${pair.to}_${period}.db`);
+        let dbPath = path.join(__dirname, `./db/${pair.from}${pair.to}_${period}.db`);
         console.log(dbPath);
         await scrapeData(pair.from, pair.to, period,dbPath,`${pair.from}${pair.to}_${period}`);
         console.log(`Scraped ${pair.from}-${pair.to} for period ${period}`);
